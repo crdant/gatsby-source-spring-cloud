@@ -1,1 +1,1 @@
-https://raw.githubusercontent.com/jlengstorf/gatsby-source-shopify-storefront/master/index.js
+// no-op
