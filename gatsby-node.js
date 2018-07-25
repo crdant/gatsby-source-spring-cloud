@@ -29,10 +29,7 @@ exports.sourceNodes = async (
   if ( configOptions.profiles ) options.profiles = configOptions.profiles ;
   if ( configOptions.agent ) options.agent = configOptions.agent ;
   if ( configOptions.context ) options.context = configOptions.context ;
-
-  console.log ("Config endoint: " + options.endpoint);
-  console.log ("Application name: " + options.application);
-
+  
   return client.load(options).then(
       (config) => {
         config.forEach(
