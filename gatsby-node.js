@@ -13,7 +13,7 @@ exports.sourceNodes = async (
   // for PCF with a bound config server
   if ( process.env.VCAP_SERVICES ) {
     vcap_services = JSON.parse(process.env.VCAP_SERVICES) ;
-    if ( vcap_services["p-config-server"] ) && ( vcap_services["p-config-server"][0] ) && ( vcap_services["p-config-server"][0].credentials ) ) {
+    if ( ( vcap_services["p-config-server"] ) && ( vcap_services["p-config-server"][0] ) && ( vcap_services["p-config-server"][0].credentials ) ) {
       options.endpoint =  vcap_services["p-config-server"][0].credentials.uri ;
       options.client_id = vcap_services["p-config-server"][0].credentials.client_id ;
       options.client_secret = vcap_services["p-config-server"][0].credentials.client_secret ;
