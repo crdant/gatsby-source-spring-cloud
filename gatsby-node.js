@@ -1,4 +1,4 @@
-const client = require("cloud-config-client")
+const client = require("@crdant/cloud-config-client")
 const crypto = require("crypto")
 const objectPath = require("object-path");
 
