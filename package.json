@@ -15,10 +15,10 @@
     "config",
     "spring"
   ],
-  "license": "Apache",
+  "license": "Apache-2.0",
   "dependencies": {
     "node-fetch": "^2.2.0",
     "query-string": "^6.1.0",
-    "spring-cloud-config": "^2.0.0"
+    "@crdant/cloud-config-client": "^0.1.0"
   }
 }

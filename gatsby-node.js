@@ -10,10 +10,14 @@ exports.sourceNodes = async (
   var vcap_services = {} ;
   var vcap_appliation = {} ;
 
+  // for PCF with a bound config server
   if ( process.env.VCAP_SERVICES ) {
     vcap_services = JSON.parse(process.env.VCAP_SERVICES) ;
     if ( vcap_services["p-config-server"] ) {
       options.endpoint = ( vcap_services["p-config-server"] ) && ( vcap_services["p-config-server"].credentials ) && vcap_services["p-config-server"].credentials.uri ;
+      options.client_id = ( vcap_services["p-config-server"] ) && ( vcap_services["p-config-server"].credentials ) && vcap_services["p-config-server"].credentials.client_id ;
+      options.client_secret = ( vcap_services["p-config-server"] ) && ( vcap_services["p-config-server"].credentials ) && vcap_services["p-config-server"].credentials.client_secret ;
+      options.access_token_uri = ( vcap_services["p-config-server"] ) && ( vcap_services["p-config-server"].credentials ) && vcap_services["p-config-server"].credentials.access_token_uri ;
     }
   }
 
@@ -29,7 +33,7 @@ exports.sourceNodes = async (
   if ( configOptions.profiles ) options.profiles = configOptions.profiles ;
   if ( configOptions.agent ) options.agent = configOptions.agent ;
   if ( configOptions.context ) options.context = configOptions.context ;
-  
+
   return client.load(options).then(
       (config) => {
         config.forEach(
