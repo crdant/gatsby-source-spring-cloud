@@ -19,6 +19,6 @@
   "dependencies": {
     "node-fetch": "^2.2.0",
     "query-string": "^6.1.0",
-    "@crdant/cloud-config-client": "^0.1.3"
+    "@crdant/cloud-config-client": "^0.1.4"
   }
 }
